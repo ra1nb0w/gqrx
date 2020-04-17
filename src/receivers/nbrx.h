@@ -36,6 +36,7 @@
 #include "dsp/rx_demod_am.h"
 //#include "dsp/resampler_ff.h"
 #include "dsp/resampler_xx.h"
+#include <gnuradio/blocks/float_to_complex.h>
 
 class nbrx;
 
@@ -132,6 +133,7 @@ private:
     gr::analog::simple_squelch_cc::sptr sql;        /*!< Squelch. */
     gr::blocks::complex_to_float::sptr  demod_raw;  /*!< Raw I/Q passthrough. */
     gr::blocks::complex_to_real::sptr   demod_ssb;  /*!< SSB demodulator. */
+
     rx_demod_fm_sptr          demod_fm;   /*!< FM demodulator. */
     rx_demod_am_sptr          demod_am;   /*!< AM demodulator. */
     rx_demod_amsync_sptr      demod_amsync;   /*!< AM-Sync demodulator. */
